@@ -4,7 +4,7 @@
     <main>
       <AppHero />
       <AppFeatures />
-      <AppNewsLetter />
+      <AppNewsletter />
     </main>
     <AppFooter />
   </div>
