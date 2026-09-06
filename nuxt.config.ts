@@ -39,6 +39,9 @@ export default defineNuxtConfig({
       settings: "heroicons:cog-6-tooth-16-solid",
       fire: "heroicons:fire-16-solid",
       puzzle: "heroicons:puzzle-piece-solid",
+      plane: "heroicons:paper-airplane-solid",
+      bars: "heroicons:bars-3-16-solid",
+      xMark: "heroicons:x-mark-16-solid",
     },
   },
 });
