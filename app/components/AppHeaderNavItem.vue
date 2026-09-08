@@ -1,11 +1,12 @@
 <script lang="ts" setup>
 const {
   linkClasses = "font-semibold hover:text-indigo-600 dark:text-gray-200 dark:hover:text-indigo-200",
-} = defineProps<{ linkClasses?: string }>();
+  link = "/",
+} = defineProps<{ linkClasses?: string; link?: string }>();
 </script>
 
 <template>
   <li>
-    <a href="#" :class="linkClasses"> <slot></slot></a>
+    <NuxtLink :to="link" :class="linkClasses"> <slot></slot></NuxtLink>
   </li>
 </template>
