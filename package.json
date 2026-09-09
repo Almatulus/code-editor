@@ -19,6 +19,7 @@
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.3",
     "@tailwindcss/postcss": "^4.3.3",
+    "@tailwindcss/typography": "^0.5.20",
     "@tailwindcss/vite": "^4.3.3",
     "prettier": "^3.9.6",
     "prettier-plugin-tailwindcss": "^0.8.1",
