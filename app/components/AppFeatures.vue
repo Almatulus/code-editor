@@ -12,6 +12,7 @@ const sectionHeader = {
     id="features"
   >
     <AppSectionHeader
+      type="section"
       :title="sectionHeader.title"
       :description="sectionHeader.description"
     />

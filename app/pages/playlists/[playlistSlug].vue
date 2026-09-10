@@ -1,8 +1,6 @@
-<script setup lang="ts"></script>
-
 <template>
   <section class="flex flex-col gap-y-8 pt-24 pb-12 sm:py-16 md:gap-y-12">
-    <AppPageHeader
+    <AppSectionHeader
       title="Prettier"
       description="Automatically format your code to ensure consistent style across your
         project."

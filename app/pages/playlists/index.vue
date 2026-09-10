@@ -1,6 +1,6 @@
 <template>
   <section class="flex flex-col gap-y-8 pt-24 pb-12 sm:py-16 md:gap-y-12">
-    <AppPageHeader
+    <AppSectionHeader
       title="Playlists"
       description=" Learn how to make VSCode work for you with our comprehensive guides and
       tutorials."
