@@ -4,17 +4,20 @@
       id="nav"
       class="border-grey-200 peer absolute inset-x-0 top-full hidden border-b bg-white target:block dark:border-0 dark:bg-gray-900"
     >
-      <ul class="flex flex-col items-center gap-y-2 px-3 pb-3">
-        <AppHeaderMobileNavItem link="/playlists">
-          Library
-        </AppHeaderMobileNavItem>
-        <AppHeaderMobileNavItem link="/login"> Log In </AppHeaderMobileNavItem>
-        <AppHeaderMobileNavItem
-          link="/register"
-          link-classes="inline-block w-full rounded-md bg-indigo-600 px-3 py-2 text-center text-sm font-semibold text-indigo-50 hover:bg-indigo-700"
-        >
-          Sign Up
-        </AppHeaderMobileNavItem>
+      <ul class="flex flex-col gap-y-2 px-3 pb-3">
+        <li>
+          <AppHeaderMobileNavLink to="/playlists"
+            >Library</AppHeaderMobileNavLink
+          >
+        </li>
+        <li>
+          <AppHeaderMobileNavLink to="/login">Log In</AppHeaderMobileNavLink>
+        </li>
+        <li>
+          <AppButton to="/login" class="inline-block w-full text-center" lg
+            >Sign Up</AppButton
+          >
+        </li>
       </ul>
     </nav>
     <AppHeaderMobileNavButton

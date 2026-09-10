@@ -12,7 +12,7 @@ definePageMeta({
       >Password Confirmation</AppFormField
     >
 
-    <AppButton> Sign Up</AppButton>
+    <AppButton class="mt-2 sm:mt-1"> Sign Up</AppButton>
   </form>
   <p class="mt-6 text-center text-sm text-gray-600 sm:mt-8 dark:text-gray-300">
     Already have an account?
