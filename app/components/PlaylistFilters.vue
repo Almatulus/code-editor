@@ -1,24 +1,9 @@
-<script setup lang="ts">
-const tags = [
-  "Productivity",
-  "Development",
-  "Design",
-  "Utility",
-  "Integration",
-  "Testing",
-  "Debugging",
-  "Formatting",
-  "Collaboration",
-  "Documentation",
-];
-</script>
-
 <template>
   <div class="flex flex-col gap-y-4 md:col-span-1 lg:gap-y-6">
     <AppFormField id="search" type="search" placeholder="Playlist Title" />
     <div class="flex flex-col gap-y-2">
       <h3 class="font-semibold sm:text-lg dark:text-white">Tags</h3>
-      <TagList :tag-list="tags" />
+      <TagList />
     </div>
   </div>
 </template>

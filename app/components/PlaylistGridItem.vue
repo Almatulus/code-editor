@@ -1,15 +1,15 @@
 <script setup lang="ts">
 const props = defineProps<{
-  playlist: {
-    id: number;
-    title: string;
-    description: string;
-  };
+  playlist: Playlist;
 }>();
 
 const playlistSlug = props.playlist.title
   .toLocaleLowerCase()
   .replaceAll(" ", "-");
+
+const { getTagsById } = useTagsStore();
+
+const playlistTags = computed(() => getTagsById(props.playlist.tagIds));
 </script>
 
 <template>
@@ -29,17 +29,17 @@ const playlistSlug = props.playlist.title
       >
         {{ playlist.description }}
       </p>
-      <!-- <footer class="mt-auto">
+      <footer class="mt-auto">
         <ul class="flex flex-wrap gap-x-2">
           <li
-            v-for="tag in playlist"
-            :key="tag"
+            v-for="tag in playlistTags"
+            :key="tag.id"
             class="rounded-full bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-600 dark:bg-indigo-600 dark:text-indigo-50"
           >
-            {{ tag }}
+            {{ tag.name }}
           </li>
         </ul>
-      </footer> -->
+      </footer>
     </article>
   </NuxtLink>
 </template>

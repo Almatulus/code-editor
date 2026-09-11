@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { usePlaylistsStore } from "~/stores/playlists";
+
 const { playlists } = usePlaylistsStore();
 </script>
 
