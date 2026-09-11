@@ -1,9 +1,9 @@
 <script setup lang="ts">
 const props = defineProps<{
   playlist: {
+    id: number;
     title: string;
-    text: string;
-    tags: string[];
+    description: string;
   };
 }>();
 
@@ -27,19 +27,19 @@ const playlistSlug = props.playlist.title
       <p
         class="mt-2 mb-6 text-sm text-gray-600 sm:text-base dark:text-gray-400"
       >
-        {{ playlist.text }}
+        {{ playlist.description }}
       </p>
-      <footer class="mt-auto">
+      <!-- <footer class="mt-auto">
         <ul class="flex flex-wrap gap-x-2">
           <li
-            v-for="tag in playlist.tags"
+            v-for="tag in playlist"
             :key="tag"
             class="rounded-full bg-indigo-50 px-2 py-1 text-xs font-medium text-indigo-600 dark:bg-indigo-600 dark:text-indigo-50"
           >
             {{ tag }}
           </li>
         </ul>
-      </footer>
+      </footer> -->
     </article>
   </NuxtLink>
 </template>
