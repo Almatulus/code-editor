@@ -2,15 +2,54 @@
 const list = [
   {
     title: "Popular Playlists",
-    links: ["Prettier", "GitLens", "Live Share"],
+    links: [
+      {
+        label: "Prettier",
+        link: "/playlists/prettier/lessons/getting-started-with-prettier",
+      },
+      {
+        label: "GitLens",
+        link: "/playlists/prettier/lessons/getting-started-with-prettier",
+      },
+      {
+        label: "Live Share",
+        link: "/playlists/prettier/lessons/getting-started-with-prettier",
+      },
+    ],
   },
   {
     title: "Configurations",
-    links: ["Settings", "Keyboard Shortcuts", "Code Snippets"],
+    links: [
+      {
+        label: "Settings",
+        link: "/playlists/prettier/lessons/getting-started-with-prettier",
+      },
+      {
+        label: "Keyboard Shortcuts",
+        link: "/playlists/prettier/lessons/getting-started-with-prettier",
+      },
+      {
+        label: "Code Snippets",
+        link: "/playlists/prettier/lessons/getting-started-with-prettier",
+      },
+    ],
   },
   {
     title: "Socials",
-    links: ["YouTube", "Telegram", "GitHub"],
+    links: [
+      {
+        label: "YouTube",
+        link: "/playlists/prettier/lessons/getting-started-with-prettier",
+      },
+      {
+        label: "Telegram",
+        link: "/playlists/prettier/lessons/getting-started-with-prettier",
+      },
+      {
+        label: "GitHub",
+        link: "/playlists/prettier/lessons/getting-started-with-prettier",
+      },
+    ],
   },
 ];
 </script>
