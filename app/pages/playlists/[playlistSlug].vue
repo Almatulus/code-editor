@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const { getPlaylistBySlug } = usePlaylistsStore();
 
-const playlist = getPlaylistBySlug(useRoute().params.playlistSlug);
+const playlist = getPlaylistBySlug(String(useRoute().params.playlistSlug));
 </script>
 
 <template>

@@ -90,10 +90,10 @@ export const usePlaylistsStore = defineStore("playlists", () => {
     },
   ]);
 
-  function getPlaylistBySlug(slug: string) {
+  function getPlaylistBySlug(slug: string): Playlist {
     return playlists.value.find(
       (playlist) => playlist.title.toLowerCase() === slug.replaceAll("-", " "),
-    );
+    )!;
   }
 
   return { playlists, getPlaylistBySlug };
