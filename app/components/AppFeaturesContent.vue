@@ -1,34 +1,27 @@
 <script setup lang="ts">
-interface Feature {
-  title: string;
-  iconName: string;
-  text: string;
-  link: string;
-}
+const { playlists } = usePlaylistsStore();
+const { getLessonById } = useLessonsStore();
 
-const features: Feature[] = [
-  {
-    title: "Settings",
-    iconName: "settings",
-    text: `Personalize your workspace to match your unique coding style and
-        preferences effortlessly.`,
-    link: "/playlists/prettier/lessons/getting-started-with-prettier",
-  },
-  {
-    title: "Keyboard Shortcuts",
-    iconName: "fire",
-    text: `Streamline your workflow with essential shortcuts that save you time
-          and boost efficiency.`,
-    link: "/playlists/prettier/lessons/getting-started-with-prettier",
-  },
-  {
-    title: "Extensions",
-    iconName: "puzzle",
-    text: `Expand your capabilities with powerful extensions tailored to enhance
-          your coding experience.`,
-    link: "/playlists/prettier/lessons/getting-started-with-prettier",
-  },
-];
+const features = ["settings", "fire", "puzzle"].map((icon, index) => {
+  let lesson;
+  const playlist = playlists[index];
+
+  if (playlist && playlist.lessonIds[0]) {
+    lesson = getLessonById(playlist.lessonIds[0]);
+  } else {
+    throw createError({
+      statusCode: 404,
+      message: "Playlist не найден",
+    });
+  }
+
+  return {
+    title: playlist.title,
+    description: playlist.description,
+    link: getPlaylistLink(playlist, lesson),
+    icon,
+  };
+});
 </script>
 
 <template>

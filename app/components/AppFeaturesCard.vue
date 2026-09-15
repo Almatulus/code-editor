@@ -2,8 +2,8 @@
 defineProps<{
   feature: {
     title: string;
-    iconName: string;
-    text: string;
+    icon: string;
+    description: string;
     link: string;
   };
 }>();
@@ -16,7 +16,7 @@ defineProps<{
     >
       <header class="flex flex-col gap-y-3">
         <Icon
-          :name="feature.iconName"
+          :name="feature.icon"
           class="size-10 text-indigo-600 sm:size-12 dark:text-indigo-400"
         />
 
@@ -25,7 +25,7 @@ defineProps<{
         </h3>
       </header>
       <p class="mt-1 text-sm text-gray-600 sm:text-base dark:text-gray-400">
-        {{ feature.text }}
+        {{ feature.description }}
       </p>
     </article>
   </NuxtLink>

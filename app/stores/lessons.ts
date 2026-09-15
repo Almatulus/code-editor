@@ -1,6 +1,6 @@
 import { defineStore } from "pinia";
 
-interface Lesson {
+export interface Lesson {
   id: number;
   title: string;
   description: string;
