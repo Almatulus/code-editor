@@ -2,7 +2,7 @@
   <nav class="hidden grow sm:block">
     <ul class="flex items-center gap-x-8">
       <li class="mr-auto">
-        <AppHeaderNavLink to="/playlists">Library</AppHeaderNavLink>
+        <AppHeaderNavLink to="/playlist">Library</AppHeaderNavLink>
       </li>
       <li>
         <AppHeaderNavLink to="/login">Log In</AppHeaderNavLink>

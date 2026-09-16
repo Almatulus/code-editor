@@ -21,7 +21,7 @@ const linkClasses = computed((): string[] => [
 <template>
   <li>
     <NuxtLink
-      :to="`/playlists/${playlistSlug}/lessons/${lessonSlug}`"
+      :to="`/playlist/${playlistSlug}/lessons/${lessonSlug}`"
       :class="linkClasses"
     >
       <span class="truncate text-sm font-medium sm:text-base">{{

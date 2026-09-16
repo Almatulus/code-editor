@@ -26,7 +26,7 @@ const playlistTags = computed(() => getTagsById(props.playlist.tagIds));
         {{ playlist.description }}
       </p>
       <footer class="mt-auto">
-        <ul class="flex flex-wrap gap-x-2">
+        <ul class="flex flex-wrap gap-x-2 gap-y-1">
           <li
             v-for="tag in playlistTags"
             :key="tag.id"

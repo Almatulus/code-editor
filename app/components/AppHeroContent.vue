@@ -16,7 +16,7 @@
       tutorials.
     </p>
     <div class="mt-6 flex gap-x-2 sm:mt-8">
-      <AppButton to="/playlists" lg>Explore</AppButton>
+      <AppButton to="/playlist" lg>Explore</AppButton>
 
       <AppButton to="#features" lg secondary>Learn More</AppButton>
     </div>

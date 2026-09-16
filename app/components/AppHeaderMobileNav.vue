@@ -6,7 +6,7 @@
     >
       <ul class="flex flex-col gap-y-2 px-3 pb-3">
         <li>
-          <AppHeaderMobileNavLink to="/playlists"
+          <AppHeaderMobileNavLink to="/playlist"
             >Library</AppHeaderMobileNavLink
           >
         </li>

@@ -90,11 +90,21 @@ export const usePlaylistsStore = defineStore("playlists", () => {
     },
   ]);
 
+  const searchQuery = ref<string>("");
+
+  const filteredPlaylists = computed(() =>
+    playlists.value.filter((playlist) =>
+      playlist.title
+        .toLocaleLowerCase()
+        .includes(searchQuery.value.toLocaleLowerCase()),
+    ),
+  );
+
   function getPlaylistBySlug(slug: string): Playlist {
     return playlists.value.find(
       (playlist) => playlist.title.toLowerCase() === slug.replaceAll("-", " "),
     )!;
   }
 
-  return { playlists, getPlaylistBySlug };
+  return { playlists, getPlaylistBySlug, searchQuery, filteredPlaylists };
 });
