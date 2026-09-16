@@ -1,5 +1,20 @@
 <script setup lang="ts">
 const playlistStore = usePlaylistsStore();
+
+const route = useRoute();
+const router = useRouter();
+
+playlistStore.searchQuery = (route.query.search as string)
+  ? (route.query.search as string).trim()
+  : "";
+
+watch(
+  () => playlistStore.searchQuery,
+  (val) => {
+    router.replace({ query: val ? { search: val } : {} });
+  },
+  { immediate: true },
+);
 </script>
 
 <template>
