@@ -7,6 +7,10 @@ export interface Lesson {
   duration: number;
 }
 
+export interface NumberedLesson extends Lesson {
+  number: number;
+}
+
 export const useLessonsStore = defineStore("lessons", () => {
   const lessons = ref<Lesson[]>([
     {
@@ -403,5 +407,9 @@ export const useLessonsStore = defineStore("lessons", () => {
     return lessons.value.find((lesson) => lesson.id === id);
   }
 
-  return { lessons, getLessonById };
+  function getLessonsByPlaylist(lessonIds: number[]) {
+    return lessons.value.filter((lesson) => lessonIds.includes(lesson.id));
+  }
+
+  return { lessons, getLessonById, getLessonsByPlaylist };
 });
