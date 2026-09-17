@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const playlistStore = usePlaylistsStore();
+const tagsStore = useTagsStore();
 
 const route = useRoute();
 const router = useRouter();
@@ -8,10 +9,24 @@ playlistStore.searchQuery = (route.query.search as string)
   ? (route.query.search as string).trim()
   : "";
 
+tagsStore.selectedTagIds = (route.query.tags as string)
+  ? (route.query.tags as string).split(",").map(Number)
+  : [];
+
 watch(
-  () => playlistStore.searchQuery,
-  (val) => {
-    router.replace({ query: val ? { search: val } : {} });
+  () => [playlistStore.searchQuery, tagsStore.selectedTagIds] as const,
+  ([searchVal, selectedIds]) => {
+    const query: Record<string, string> = {};
+
+    if (searchVal) {
+      query.search = searchVal;
+    }
+
+    if (selectedIds?.length) {
+      query.tags = selectedIds.join(",");
+    }
+
+    router.replace({ query });
   },
   { immediate: true },
 );
