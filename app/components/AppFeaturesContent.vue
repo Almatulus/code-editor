@@ -9,10 +9,7 @@ const features = ["settings", "fire", "puzzle"].map((icon, index) => {
   if (playlist && playlist.lessonIds[0]) {
     lesson = getLessonById(playlist.lessonIds[0]);
   } else {
-    throw createError({
-      statusCode: 404,
-      message: "Playlist не найден",
-    });
+    throw "Playlist не найден";
   }
 
   return {

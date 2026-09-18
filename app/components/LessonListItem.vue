@@ -12,6 +12,8 @@ const linkClasses = computed((): string[] => [
     ? "bg-indigo-50  text-indigo-700 dark:bg-gray-700"
     : "text-gray-600 hover:bg-gray-100",
 ]);
+
+const formattedDuration = computed(() => formatDuration(props.lesson.duration));
 </script>
 
 <template>
@@ -24,7 +26,7 @@ const linkClasses = computed((): string[] => [
         `${lesson.number}. ${lesson.title}`
       }}</span>
       <span class="text-sm text-gray-500 sm:text-base">{{
-        lesson.duration
+        formattedDuration
       }}</span>
     </NuxtLink>
   </li>

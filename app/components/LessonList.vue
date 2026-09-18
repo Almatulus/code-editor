@@ -9,10 +9,7 @@ const playlistSlug = playlistStore.getPlaylistBySlug(
 );
 
 if (!playlistSlug) {
-  throw createError({
-    status: 404,
-    message: "PlaylistSlug не существует",
-  });
+  throw404("PlaylistSlug не существует");
 }
 
 const lessons = computed(() =>

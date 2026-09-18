@@ -411,19 +411,8 @@ export const useLessonsStore = defineStore("lessons", () => {
     return lessons.value.filter((lesson) => lessonIds.includes(lesson.id));
   }
 
-  function getLessonBySlug(slug: string): Lesson {
-    const lessonList = lessons.value.find(
-      (lesson) => getSlug(lesson.title) === slug,
-    );
-
-    if (!lessonList) {
-      throw createError({
-        message: "Lesson не найден",
-        status: 404,
-      });
-    }
-
-    return lessonList;
+  function getLessonBySlug(slug: string) {
+    return lessons.value.find((lesson) => getSlug(lesson.title) === slug);
   }
 
   return { lessons, getLessonById, getLessonsByPlaylist, getLessonBySlug };
