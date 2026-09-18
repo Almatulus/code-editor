@@ -2,12 +2,22 @@
 const playlistStore = usePlaylistsStore();
 const lessonsStore = useLessonsStore();
 
+const route = useRoute();
+
+const playlistSlug = playlistStore.getPlaylistBySlug(
+  String(route.params.playlistSlug),
+);
+
+if (!playlistSlug) {
+  throw createError({
+    status: 404,
+    message: "PlaylistSlug не существует",
+  });
+}
+
 const lessons = computed(() =>
   lessonsStore
-    .getLessonsByPlaylist(
-      playlistStore.getPlaylistBySlug(String(useRoute().params.playlistSlug))
-        .lessonIds,
-    )
+    .getLessonsByPlaylist(playlistSlug.lessonIds)
     .map((lesson, index) => {
       return { ...lesson, number: index + 1 };
     }),

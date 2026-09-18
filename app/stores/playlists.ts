@@ -92,10 +92,8 @@ export const usePlaylistsStore = defineStore("playlists", () => {
 
   const searchQuery = ref<string>("");
 
-  function getPlaylistBySlug(slug: string): Playlist {
-    return playlists.value.find(
-      (playlist) => playlist.title.toLowerCase() === slug.replaceAll("-", " "),
-    )!;
+  function getPlaylistBySlug(slug: string) {
+    return playlists.value.find((playlist) => getSlug(playlist.title) === slug);
   }
 
   return { playlists, getPlaylistBySlug, searchQuery };

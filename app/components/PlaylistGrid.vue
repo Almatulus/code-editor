@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { usePlaylistsStore, type Playlist } from "~/stores/playlists";
+import { usePlaylistsStore } from "~/stores/playlists";
 
 const playlistStore = usePlaylistsStore();
 const tagsStore = useTagsStore();
