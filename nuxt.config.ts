@@ -31,7 +31,13 @@ export default defineNuxtConfig({
     ],
     "@nuxt/icon",
     "@pinia/nuxt",
+    "nuxt-auth-utils",
+    "@nuxthub/core",
   ],
+
+  hub: {
+    db: "sqlite",
+  },
 
   icon: {
     mode: "svg",
