@@ -10,14 +10,27 @@
             >Library</AppHeaderMobileNavLink
           >
         </li>
-        <li>
-          <AppHeaderMobileNavLink to="/login">Log In</AppHeaderMobileNavLink>
-        </li>
-        <li>
-          <AppButton to="/login" class="inline-block w-full text-center" lg
-            >Sign Up</AppButton
-          >
-        </li>
+
+        <AuthState v-slot="{ loggedIn, clear }">
+          <li v-if="loggedIn">
+            <AppButton class="inline-block w-full text-center" lg @click="clear"
+              >Log out</AppButton
+            >
+          </li>
+
+          <template v-else>
+            <li>
+              <AppHeaderMobileNavLink to="/login"
+                >Log In</AppHeaderMobileNavLink
+              >
+            </li>
+            <li>
+              <AppButton to="/login" class="inline-block w-full text-center" lg
+                >Sign Up</AppButton
+              >
+            </li>
+          </template>
+        </AuthState>
       </ul>
     </nav>
     <AppHeaderMobileNavButton
